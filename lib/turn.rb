@@ -2,10 +2,10 @@ class Turn
   # guess - This method returns the guess
   # card - This method returns the Card
   attr_reader :guess, :card, :correct
-  # initialize(guess, card) - A turn is initialized with two arguments. 
+  # A turn is initialized with two arguments. 
   # The first is a string representing a guess to a card’s question. 
   # The second argument is a Card object representing the current flashcard being shown.
-  def initialize(guess, card)
+  def initialize(guess, current_card)
     @guess = guess
     @card = card
     @correct = false
