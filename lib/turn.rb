@@ -1,7 +1,7 @@
 class Turn
   # guess - This method returns the guess
   # card - This method returns the Card
-  attr_accessor :card
+  # attr_accessor :card
   attr_reader :guess, :current_card, :correct
   # A turn is initialized with two arguments. 
   # The first is a string representing a guess to a card’s question. 
