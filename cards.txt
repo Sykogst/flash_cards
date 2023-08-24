@@ -1,0 +1,4 @@
+What is the capital of Alaska?,Juneau,:Geography
+What is the name of the tallest grass?,Bamboo,"STEM
+What is the closest planet to the Sun?,Mercury,:STEM
+When was the first World War Started,1914,:History
