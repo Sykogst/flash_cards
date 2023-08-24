@@ -40,7 +40,9 @@ RSpec.describe Round do
 
       another_turn = @round.take_turn('Bluegrass')
       expect(another_turn).to eq(another_turn)
-      expect(another_turn.correct?).to be false
+      expect(@round.turns.count).to be 2
+      expect(@round.turns.last.feedback).to eq("Incorrect")
+
     end
 
     it 'no more cards left' do
@@ -52,4 +54,27 @@ RSpec.describe Round do
     end
   end
 
+  describe '#number_correct' do
+    it 'has number_correct' do
+      new_turn = @round.take_turn('Juneau')
+      another_turn = @round.take_turn('Bluegrass')
+      expect(@round.number_correct).to be 1
+    end
+  end
+
+  describe '@number_correct_by_category' do
+    it 'has number_correct_by_category' do
+      new_turn = @round.take_turn('Juneau')
+      another_turn = @round.take_turn('Bluegrass')
+      expect(@round.number_correct_by_category(:STEM)).to be 0
+    end
+  end
+
+  describe '@percent_correct' do
+    it 'has percent_correct' do
+      new_turn = @round.take_turn('Juneau')
+      another_turn = @round.take_turn('Bluegrass')
+      expect(@round.percent_correct).to be 0
+    end
+  end
 end

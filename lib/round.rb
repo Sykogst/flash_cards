@@ -21,4 +21,13 @@ class Round
       turn_1
     end
   end
+
+  def number_correct
+    @turns.count { |turn| turn.correct? }
+  end
+
+  def number_correct_by_category(category_filter)
+    filtered_turns = @turns.select { |turn| turn.current_category == category_filter }
+    filtered_turns.count { |filtered_turn| filtered_turn.correct? }
+  end
 end
