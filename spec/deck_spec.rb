@@ -21,7 +21,7 @@ RSpec.describe Deck do
     end
 
     it 'has a count' do 
-      expect(@deck.count).to be 3
+      expect(@deck.total_cards).to be 3
     end
   end
 
