@@ -1,10 +1,11 @@
 class Round
-  attr_reader :deck, :turns, :card_index
+  attr_reader :deck, :turns, :card_index, :total_correct
   def initialize(deck)
     @deck = deck
     @turns = []
     @card_index = 0
     @question_card
+    @total_correct = 0
   end
 
   def question_card
@@ -23,11 +24,22 @@ class Round
   end
 
   def number_correct
-    @turns.count { |turn| turn.correct? }
+    @total_correct = @turns.count { |turn| turn.correct? }
   end
 
   def number_correct_by_category(category_filter)
     filtered_turns = @turns.select { |turn| turn.current_category == category_filter }
     filtered_turns.count { |filtered_turn| filtered_turn.correct? }
+  end
+
+  def percent_correct
+    number_correct
+    @total_correct.to_f / @card_index.to_f * 100.0
+  end
+
+  def percent_correct_by_category(category_filter)
+    filtered_turns = @turns.select { |turn| turn.current_category == category_filter }
+    filtered_correct = filtered_turns.count { |filtered_turn| filtered_turn.correct? }
+    filtered_correct.to_f / filtered_turns.length.to_f * 100.0
   end
 end

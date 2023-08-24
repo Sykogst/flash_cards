@@ -74,7 +74,15 @@ RSpec.describe Round do
     it 'has percent_correct' do
       new_turn = @round.take_turn('Juneau')
       another_turn = @round.take_turn('Bluegrass')
-      expect(@round.percent_correct).to be 0
+      expect(@round.percent_correct).to eq(50.0)
+    end
+  end
+
+  describe '@percent_correct_by_category' do
+    it 'has percent_correct_by_category' do
+      new_turn = @round.take_turn('Juneau')
+      another_turn = @round.take_turn('Bluegrass')
+      expect(@round.percent_correct_by_category(:Geography)).to eq(100.0)
     end
   end
 end
