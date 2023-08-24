@@ -7,7 +7,7 @@ card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
 card_2 = Card.new("What is the name of the tallest grass?", "Bamboo", :STEM)
 card_3 = Card.new("What is the closest planet to the Sun?", "Mercury", :STEM)
 card_4 = Card.new("When was the first World War Started", "1914", :History)
-cards = [card_1, card_2, card_3, card_4]
+p cards = [card_1, card_2, card_3, card_4]
 deck_1 = Deck.new(cards)
 round_1 = Round.new(deck_1)
 
@@ -32,4 +32,4 @@ def start(round)
 
 end
 
-start(round_1)
+# start(round_1)
